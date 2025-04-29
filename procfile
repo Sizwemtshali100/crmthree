@@ -1,1 +1,0 @@
-web: gunicorn customerthree.wsgi:application --log--file
