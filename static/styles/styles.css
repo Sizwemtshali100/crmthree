@@ -1,0 +1,22 @@
+body {
+    background-color: rgb(189, 106, 106);
+}
+
+.headings {
+    text-align: center;
+}
+
+
+.container {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Responsive columns */
+    background-color:palevioletred;
+    grid-gap: 20px; /* Spacing between grid items */
+    width: 90vw; /* 90% of viewport width */
+    max-width: 1200px; /* Prevents it from being too wide */
+    height: 80vh; /* 80% of viewport height */
+    margin: auto; /* Centers the container */
+    padding: 20px;
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(71, 66, 66, 0.1); /* Soft shadow */
+    overflow: hidden; /* Prevents content overflow */
+}

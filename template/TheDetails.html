@@ -1,0 +1,41 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+<center>
+<h1>Details </h1>
+
+<br>
+<a href="{% url 'TheEdit' theDataDetails.id  %}">Edit</a>
+<br>
+<br>
+
+<div class="card" style="width: 18rem;">
+    <div class="card-header">
+        {{theDataDetails.Created_by}}<br>
+    </div>
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item">
+        {{theDataDetails.Region}}<br>
+    </li>
+      <li class="list-group-item">
+        {{theDataDetails.Items}}<br>
+    </li>
+      <li class="list-group-item">
+        {{theDataDetails.TheDate}}<br>
+    </li>
+      <li class="list-group-item">
+        {{theDataDetails.Rep}}<br>
+    </li>
+      <li class="list-group-item">
+        {{theDataDetails.Units}}<br>
+    </li>
+      <li class="list-group-item">
+        {{theDataDetails.Cost}}<br>
+    </li>
+
+    </ul>
+  </div>
+</center>
+
+
+{% endblock %}

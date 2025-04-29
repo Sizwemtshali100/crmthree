@@ -1,0 +1,22 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+<h1>The Edit </h1>
+
+<br>
+<form action="" method="POST">
+
+    {% csrf_token %}
+    {{Editform.Region}}<br><br>
+    {{Editform.Rep}}<br><br>
+    {{Editform.Items}}<br><br>
+    {{Editform.Units}}<br><br>
+    {{Editform.Cost}}<br><br>
+
+
+    <input type="submit" value="Enter edit" class="btn btn-primary">
+
+</form>
+
+
+{% endblock %}

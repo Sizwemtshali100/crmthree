@@ -1,0 +1,126 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+<div class="headings">
+    <h1>Home</h1>
+</div>
+
+<div class="row">
+    <div class="col">
+      <div class="card" style="width: 12rem;">
+        <div class="card-header">
+            Pencil
+        </div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">
+            {{theDataPencil}}
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card" style="width: 12rem;">
+        <div class="card-header">
+            Bender
+        </div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">
+            {{theDataBender}}
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="col">
+        <div class="card" style="width: 12rem;">
+          <div class="card-header">
+              Pen
+          </div>
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item">
+              {{theDataPen}}
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card" style="width: 12rem;">
+          <div class="card-header">
+              Desk
+          </div>
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item">
+              {{theDataDesk}}
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card" style="width: 12rem;">
+          <div class="card-header">
+              Pen Set
+          </div>
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item">
+              {{theDataPenSet}}
+            </li>
+          </ul>
+        </div>
+      </div>
+</div>
+<table class="table table-striped-columns">
+    <tr>
+        <th>
+            id
+        </th>
+        <th>
+            Region
+        </th>
+        <th>
+            Items
+        </th>
+        <th>
+            Created By
+        </th>
+    </tr>
+    {% for data in pageObject %}
+    <tr>
+        <td>
+            <a href="{% url 'TheDetails' data.id %}">
+                {{data.id}}
+            </a> 
+        </td>
+        <td>
+            {{data.Region}}
+        </td>
+        <td>
+            {{data.Items}}
+        </td>
+        <td>
+            {{data.Created_by}}
+        </td>
+    </tr>
+    <br>
+    {% endfor %}
+
+</table>
+
+<div class="pagination">
+    <span class="step-links">
+        {% if pageObject.has_previous %}
+            <a href="?page=1">&laquo; first</a>
+            <a href="?page={{ pageObject.previous_page_number }}">previous</a>
+        {% endif %}
+
+        <span class="current">
+            Page {{ pageObject.number }} of {{ pageObject.paginator.num_pages }}.
+        </span>
+
+        {% if pageObject.has_next %}
+            <a href="?page={{ pageObject.next_page_number }}">next</a>
+            <a href="?page={{ pageObject.paginator.num_pages }}">last &raquo;</a>
+        {% endif %}
+    </span>
+</div>
+
+
+{% endblock %}

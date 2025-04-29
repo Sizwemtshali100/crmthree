@@ -1,0 +1,22 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+<br>
+<h1>Enter the Form</h1>
+<hr>
+<br>
+<form method="POST" action="">
+    {% csrf_token %}
+
+    <label>Region </label>{{TheCustomerForm.Region}}<br><br>
+    <label>Rep </label>{{TheCustomerForm.Rep}}<br><br>
+    <label>Items </label>{{TheCustomerForm.Items}}<br><br>
+    <label>Units </label>  {{TheCustomerForm.Units}}<br><br>
+    <label>Cost </label>{{TheCustomerForm.Cost}}<br>
+
+    <input type="submit" value="Enter" class="btn btn-primary">
+
+</form>
+
+{% endblock %}
+
